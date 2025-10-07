@@ -1,53 +1,112 @@
+/* ========= Base Styles ========= */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  line-height: 1.6;
-  background: #fff;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F9FAF8;
   color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
 }
 
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #2E4600;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: #FF9800;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========= Header ========= */
 header {
-  background: #a4133c;
+  background: linear-gradient(90deg, rgba(46,70,0,0.95), rgba(255,152,0,0.85)),
+              url('https://images.unsplash.com/photo-1530484562461-4d5b7b3d4e14?auto=format&fit=crop&w=1400&q=60');
+  background-size: cover;
+  background-position: center;
   color: white;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 100px 20px;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2rem;
+  font-size: 3em;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
-.tagline {
+header p {
+  font-size: 1.3em;
   font-style: italic;
-  margin-top: 0.5rem;
-  color: #ffe6eb;
+  opacity: 0.95;
 }
 
+/* ========= Navigation ========= */
 nav {
-  margin-top: 1rem;
+  background-color: #2E4600;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
+  padding: 14px 25px;
+  display: block;
   font-weight: bold;
+  transition: background 0.3s;
 }
 
+nav a:hover {
+  background-color: #FF9800;
+}
+
+/* ========= Sections ========= */
 section {
-  padding: 2rem;
-  max-width: 800px;
+  padding: 80px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
-h2 {
-  color: #a4133c;
+section:nth-child(even) {
+  background-color: #F1F5F2;
 }
 
+p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+/* ========= Buttons ========= */
+.btn {
+  display: inline-block;
+  background-color: #FF9800;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #2E4600;
+}
+
+/* ========= Footer ========= */
 footer {
-  background: #333;
+  background-color: #2E4600;
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 25px;
+  font-size: 0.9em;
+}
+
+.highlight {
+  color: #FF9800;
+  font-weight: bold;
 }
