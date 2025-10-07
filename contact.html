@@ -65,6 +65,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   if (!form) return;
+   form.action = "https://formspree.io/f/mjkaevoo";
+  form.method = "POST";
 
   const btn = form.querySelector('button[type="submit"]');
   const spinner = btn.querySelector('.spinner');
