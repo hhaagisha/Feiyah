@@ -10,78 +10,120 @@
 
   <!-- Styles -->
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #FDFDFD;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+  /* ========= Base Styles ========= */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F9FAF8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+  }
 
-    header {
-      background: linear-gradient(90deg, #2E4600, #FF9800);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
+  h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #2E4600;
+    margin-bottom: 0.5em;
+  }
 
-    header h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2.5em;
-      margin: 0;
-    }
+  a {
+    color: #FF9800;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      font-style: italic;
-    }
+  /* ========= Header ========= */
+  header {
+    background: linear-gradient(90deg, rgba(46,70,0,0.95), rgba(255,152,0,0.85)),
+                url('https://images.unsplash.com/photo-1530484562461-4d5b7b3d4e14?auto=format&fit=crop&w=1400&q=60');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
 
-    nav {
-      background-color: #2E4600;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+  header h1 {
+    font-size: 3em;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 14px 25px;
-      display: block;
-      transition: background 0.3s;
-    }
+  header p {
+    font-size: 1.3em;
+    font-style: italic;
+    opacity: 0.95;
+  }
 
-    nav a:hover {
-      background-color: #FF9800;
-    }
+  /* ========= Navigation ========= */
+  nav {
+    background-color: #2E4600;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    display: block;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
 
-    h2 {
-      color: #2E4600;
-      font-family: 'Poppins', sans-serif;
-      margin-bottom: 10px;
-    }
+  nav a:hover {
+    background-color: #FF9800;
+  }
 
-    footer {
-      background-color: #2E4600;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-    }
+  /* ========= Sections ========= */
+  section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
 
-    .highlight {
-      color: #FF9800;
-      font-weight: bold;
-    }
-  </style>
+  section:nth-child(even) {
+    background-color: #F1F5F2;
+  }
+
+  p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  /* ========= Buttons ========= */
+  .btn {
+    display: inline-block;
+    background-color: #FF9800;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+
+  .btn:hover {
+    background-color: #2E4600;
+  }
+
+  /* ========= Footer ========= */
+  footer {
+    background-color: #2E4600;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9em;
+  }
+
+  .highlight {
+    color: #FF9800;
+    font-weight: bold;
+  }
+</style>
+
 </head>
 <body>
 
