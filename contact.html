@@ -61,5 +61,81 @@
   <footer>
     <p>&copy; 2025 Feiyah Action Network | Empowering Indigenous Youth for Justice</p>
   </footer>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  const btn = form.querySelector('button[type="submit"]');
+  const spinner = btn.querySelector('.spinner');
+  const msgBox = document.getElementById('form-message');
+
+  function showMessage(text, type) {
+    if (!text) {
+      msgBox.style.display = 'none';
+      msgBox.className = 'form-message';
+      msgBox.textContent = '';
+      return;
+    }
+    msgBox.style.display = 'block';
+    msgBox.textContent = text;
+    msgBox.className = 'form-message ' + (type === 'success' ? 'success' : 'error');
+    msgBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    // Basic validation
+    if (!name || !email || !message) {
+      showMessage('Please complete all fields before sending.', 'error');
+      return;
+    }
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(email)) {
+      showMessage('Please enter a valid email address.', 'error');
+      return;
+    }
+
+    // disable UI
+    btn.disabled = true;
+    btn.classList.add('loading');
+    spinner.style.display = 'inline-block';
+    showMessage('', '');
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method || 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        showMessage('Thank you — we received your message and will reply soon. 💛', 'success');
+        form.reset();
+      } else {
+        const data = await response.json().catch(()=>null);
+        if (data && data.errors) {
+          showMessage(data.errors.map(x=>x.message).join(', '), 'error');
+        } else {
+          showMessage('There was a problem sending your message. Please try again later.', 'error');
+        }
+      }
+    } catch (err) {
+      showMessage('Network error — please check your connection and try again.', 'error');
+    } finally {
+      btn.disabled = false;
+      btn.classList.remove('loading');
+      spinner.style.display = 'none';
+    }
+  });
+});
+</script>
+
 </body>
 </html>
