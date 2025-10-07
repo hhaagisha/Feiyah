@@ -19,26 +19,32 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <section>
-    <h2>Get In Touch</h2>
-    <p>
-      We’d love to hear from you! Whether you’re a youth advocate, community partner, or supporter, 
-      reach out to join our movement for equality, empowerment, and environmental justice.
-    </p>
+ <section>
+  <h2>Get In Touch</h2>
+  <p>
+    We’d love to hear from you! Whether you’re a youth advocate, community partner, or supporter,
+    reach out to join our movement for equality, empowerment, and community resilience.
+  </p>
 
-    <form action="https://formspree.io/f/mjkaevoo" method="POST" class="contact-form">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required>
+  <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST" class="contact-form" novalidate>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required>
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
+    <button type="submit" class="btn">
+      <span class="spinner" style="display:none"></span>
+      Send Message
+    </button>
+
+    <!-- This box will show success / error text -->
+    <div id="form-message" class="form-message" style="display:none; margin-top:12px;"></div>
+  </form>
+</section>
 
   <section>
     <h3>Connect With Us</h3>
