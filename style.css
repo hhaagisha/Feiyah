@@ -110,3 +110,47 @@ footer {
   color: #FF9800;
   font-weight: bold;
 }
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* For tablets and smaller screens */
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
